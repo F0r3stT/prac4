@@ -8,7 +8,6 @@ using namespace std;
 
 class UrlShortener {
 private:
-    // Клиент базы данных
     DatabaseClient dbClient;
     
     const int short_len = 6;

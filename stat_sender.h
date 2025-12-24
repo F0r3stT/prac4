@@ -8,9 +8,7 @@ using namespace std;
 //отправка статистики
 struct StatSender {
     //статик чтобы ограничить видимость функции
-    static void sendStat(const string& statHost, int statPort, 
-                         const string& ip, const string& originalUrl, 
-                         const string& shortCode, long timestamp);
+    static void sendStat(const string& statHost, int statPort, const string& ip, const string& originalUrl, const string& shortCode, long timestamp);
 };
 
 #endif

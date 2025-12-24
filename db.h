@@ -13,21 +13,16 @@ class Database {
 private:
     
     unordered_map<string, unordered_map<string, string>> tables;
-    //библоитечна бд чтобы основной операцией было найти по ключу, вставтиь удалить
 
     void parseQuery(const string& qStr, string& cmd, string& name, string& key, string& val);
 
 public:
-    // Конструктор
     Database();
     ~Database();
 
-    // Загрузка данных из файла
     void loadData(const string& path);
-    // Сохранение данных в файл
     void saveData(const string& path);
     
-    // Главный метод выполнения команд (HSET, HGET, HGETALL)
     string executeQuery(string queryStr);
 };
 

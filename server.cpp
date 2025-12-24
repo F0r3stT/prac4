@@ -14,7 +14,6 @@ using namespace std;
 //указатель для обработчика сигналов
 SimpleServer* globalServer = nullptr;
 
-// Обработчик Ctrl+C для корректного сохранения данных перед выходом
 void signalHandler(int signum) {
     cout << "\nВыключаем сервер..." << endl;
     if (globalServer != nullptr) {
@@ -23,7 +22,6 @@ void signalHandler(int signum) {
     exit(0); 
 }
 
-// Конструктор
 SimpleServer::SimpleServer(const string& dbFile, int p) {
     this->port = p;
     this->filename = dbFile;
@@ -32,7 +30,6 @@ SimpleServer::SimpleServer(const string& dbFile, int p) {
     this->isRunning = false;
 }
 
-// Деструктор
 SimpleServer::~SimpleServer() {
     stop();     
     if (db != nullptr) {
